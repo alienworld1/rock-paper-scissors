@@ -12,15 +12,28 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
+
     if (playerSelection === "rock") {
         switch (computerSelection) {
             case "paper":
-                return "You lose! Paper beats rock."
+                return "You lose! Paper beats rock.";
             case "scissors":
-                return "You win! Rock beats scissors."
+                return "You win! Rock beats scissors.";
             default:
                 playRound(prompt("Enter your choice:"), getComputerChoice());
                 break;
+        }
+    }
+
+    if (playerSelection === "paper") {
+        switch (computerSelection) {
+            case "rock":
+                return "You win! Paper beats rock.";
+            case "scissors":
+                return "You lose! Scissors beats paper.";
+            default:
+                playRound(prompt("Enter your choice:"), getComputerChoice());
+                break;                
         }
     }
 }

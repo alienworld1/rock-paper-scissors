@@ -20,7 +20,7 @@ function playRound(playerSelection, computerSelection) {
             case "scissors":
                 return "You win! Rock beats scissors.";
             default:
-                playRound(prompt("Enter your choice:"), getComputerChoice());
+                return "It's a tie!"
                 break;
         }
     }
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
             case "scissors":
                 return "You lose! Scissors beats paper.";
             default:
-                playRound(prompt("Enter your choice:"), getComputerChoice());
+                return "It's a tie!"
                 break;                
         }
     }
@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection) {
             case "paper":
                 return "You win! Scissors beats paper.";
             default:
-                playRound(prompt("Enter your choice:"), getComputerChoice());
+                return "It's a tie!"
                 break;                                
         }
     }
@@ -57,12 +57,12 @@ function game() {
     let playerScore = 0;
 
     for (let i = 0; i < 5; i++) {
-        playerChoice = prompt("Enter your choice");
+        playerChoice = prompt("Enter your choice") ?? "";
         roundResult = playRound(playerChoice, getComputerChoice());
 
         while (!roundResult) {
             console.log("Please choose either rock, paper or scissors.");
-            playerChoice = prompt("Enter your choice");
+            playerChoice = prompt("Enter your choice") ?? "";
             roundResult = playRound(playerChoice, getComputerChoice());                
         }
 

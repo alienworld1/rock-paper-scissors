@@ -67,7 +67,12 @@ function game() {
         }
 
         console.log(roundResult);
-        if (roundResult.startsWith("You win!")) {
+
+        if (roundResult === "It's a tie!") {
+            i--;
+        }
+
+        else if (roundResult.startsWith("You win!")) {
             playerScore++;
         }
     }

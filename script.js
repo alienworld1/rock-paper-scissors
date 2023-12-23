@@ -9,3 +9,18 @@ function getComputerChoice(){
             return "scissors";
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    if (playerSelection === "rock") {
+        switch (computerSelection) {
+            case "paper":
+                return "You lose! Paper beats rock."
+            case "scissors":
+                return "You win! Rock beats scissors."
+            default:
+                playRound(prompt("Enter your choice:"), getComputerChoice());
+                break;
+        }
+    }
+}

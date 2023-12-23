@@ -50,3 +50,30 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
+
+function game() {
+    let roundResult;
+    let playerChoice;
+    let playerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playerChoice = prompt("Enter your choice");
+        roundResult = playRound(playerChoice, getComputerChoice());
+
+        while (!roundResult) {
+            console.log("Please choose either rock, paper or scissors.");
+            playerChoice = prompt("Enter your choice");
+            roundResult = playRound(playerChoice, getComputerChoice());                
+        }
+
+        console.log(roundResult);
+        if (roundResult.startsWith("You win!")) {
+            playerScore++;
+        }
+    }
+
+    console.log(`You won ${playerScore} out of 5 rounds.`)
+    console.log((playerScore > 2)? "You win! Congratulations." : "You lost! Better luck next time." );
+}
+
+game();

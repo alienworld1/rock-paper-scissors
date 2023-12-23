@@ -25,7 +25,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
-    if (playerSelection === "paper") {
+    else if (playerSelection === "paper") {
         switch (computerSelection) {
             case "rock":
                 return "You win! Paper beats rock.";
@@ -36,4 +36,18 @@ function playRound(playerSelection, computerSelection) {
                 break;                
         }
     }
+
+    else if (playerSelection === "scissors") {
+        switch (computerSelection) {
+            case "rock":
+                return "You lose! Rock beats scissors.";
+            case "paper":
+                return "You win! Scissors beats paper.";
+            default:
+                playRound(prompt("Enter your choice:"), getComputerChoice());
+                break;                                
+        }
+    }
+
+
 }

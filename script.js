@@ -50,3 +50,11 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
+
+const playerButtons = document.querySelectorAll("#player-buttons-container button");
+
+playerButtons.forEach((playerButton) => {
+    playerButton.addEventListener("click", () => {
+        let roundResult = playRound(playerButton.id, getComputerChoice());
+    })
+})

@@ -54,6 +54,10 @@ function playRound(playerSelection, computerSelection) {
 const playerButtons = document.querySelectorAll("#player-buttons-container button");
 const computerChoicePara = document.querySelector("#computer-choice-text");
 const resultDiv = document.querySelector("#results-container");
+const scoreDiv = document.querySelector("#score-container");
+
+let playerScore = 0;
+let computerScore = 0;
 
 playerButtons.forEach((playerButton) => {
     playerButton.addEventListener("click", () => {
@@ -65,11 +69,13 @@ playerButtons.forEach((playerButton) => {
         if (roundResult.startsWith("You win")) {
             resultDiv.classList.add("win");
             resultDiv.classList.remove("loss");
+            playerScore++;
         }
 
         else if (roundResult.startsWith("You")) {
             resultDiv.classList.add("loss");
             resultDiv.classList.remove("win");            
+            computerScore++;
         }
 
         else {
@@ -78,6 +84,8 @@ playerButtons.forEach((playerButton) => {
         }
 
         resultDiv.textContent = roundResult;
+        scoreDiv.innerHTML = `Your score: ${playerScore}` +
+        '<br>' + `My score: ${computerScore}`;
     })
 })
 

@@ -4,5 +4,29 @@
 .title {
     font-family: 'Mukta', sans-serif;
     text-align: center;
-    height: 10vh;
+    margin: 0;
+    font-size: 48px;
+}
+
+main {
+    height: 90vh;
+    display: flex;
+}
+
+#player-buttons-container {
+    display: flex;
+    flex-direction: horizontal;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5em;
+}
+
+.player-button {
+    background-color: cornflowerblue;
+    padding: 1em;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    border-radius: 10px;
 }

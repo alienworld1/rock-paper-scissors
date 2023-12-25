@@ -62,6 +62,21 @@ playerButtons.forEach((playerButton) => {
         computerChoicePara.textContent = `I choose... ${choice}!`;
         let roundResult = playRound(playerButton.id, choice);
 
+        if (roundResult.startsWith("You win")) {
+            resultDiv.classList.add("win");
+            resultDiv.classList.remove("loss");
+        }
+
+        else if (roundResult.startsWith("You")) {
+            resultDiv.classList.add("loss");
+            resultDiv.classList.remove("win");            
+        }
+
+        else {
+            resultDiv.classList.remove("win");
+            resultDiv.classList.remove("loss");
+        }
+
         resultDiv.textContent = roundResult;
     })
 })

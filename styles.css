@@ -33,6 +33,18 @@ main {
     border-radius: 10px;
 }
 
+.result {
+    font-weight: bold;
+}
+
+.win {
+    color: green;
+}
+
+.loss {
+    color: crimson;
+}
+
 .body-text {
     font-family: "Montserrat", sans-serif;
     font-size: 32px;

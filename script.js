@@ -53,12 +53,16 @@ function playRound(playerSelection, computerSelection) {
 
 const playerButtons = document.querySelectorAll("#player-buttons-container button");
 const computerChoicePara = document.querySelector("#computer-choice-text");
+const resultDiv = document.querySelector("#results-container");
 
 playerButtons.forEach((playerButton) => {
     playerButton.addEventListener("click", () => {
         choice = getComputerChoice();
+
         computerChoicePara.textContent = `I choose... ${choice}!`;
         let roundResult = playRound(playerButton.id, choice);
+
+        resultDiv.textContent = roundResult;
     })
 })
 
